@@ -438,6 +438,7 @@ strip.show();                                     // show()를 해야 실제로 
 |---|---|---|
 | [Button_A0](Button_A0/Button_A0.ino) | 버튼 눌림, 안 눌림 출력 | 내부 풀업 |
 | [Button_Toggle_LED](Button_Toggle_LED/Button_Toggle_LED.ino) | 누를 때마다 LED 켜기, 끄기 | 디바운싱, 상태 변화 |
+| [Wokwi_Toggle_LED](Wokwi_Toggle_LED/Wokwi_Toggle_LED.ino) | Wokwi 시뮬레이터에서 누를 때마다 LED 켜기, 끄기 (회로: `diagram.json`) | 손 뗄 때까지 기다리는 디바운싱 |
 | [Button_Count_LED](Button_Count_LED/Button_Count_LED.ino) | 누른 횟수 세기, 5번마다 LED 토글 | 디바운싱, 상태 변화 |
 | [Button_Click_LED](Button_Click_LED/Button_Click_LED.ino) | 두 번 빠르게 누르면 켜기, 길게 누르면 끄기, 한 번 짧게는 그대로 | `millis()`로 시간 재기 |
 | [Button_Interrupt_LED](Button_Interrupt_LED/Button_Interrupt_LED.ino) | 누를 때와 뗄 때마다 LED 토글 | 인터럽트 (`CHANGE`) |
