@@ -7,8 +7,6 @@
 
 Tinkercad로 만들어 본 회로들
 
-<br>
-
 ## 목차
 
 1. [GPIO](#1-gpio)
@@ -23,15 +21,11 @@ Tinkercad로 만들어 본 회로들
 10. [예제 코드 모음](#예제-코드-모음)
 11. [보드에 업로드하는 방법](#보드에-업로드하는-방법)
 
-<br>
-
 ---
 
 ## 1. GPIO
 
 > 메모: GPIO는 프로그래밍이 가능한 핀이다.
-
-<br>
 
 ### 뜻
 
@@ -49,15 +43,11 @@ GPIO는 General Purpose Input Output, 우리말로 범용 입출력이라는 뜻
 | `pinMode(핀, OUTPUT)` | 핀에서 전기를 내보내요 (출력) |
 | `pinMode(핀, INPUT)` | 핀에 들어온 전기를 읽어요 (입력) |
 
-<br>
-
 ---
 
 ## 2. 디지털 출력
 
 > 메모: 디지털 출력 5V, GND
-
-<br>
 
 ### HIGH와 LOW
 
@@ -86,15 +76,11 @@ GND(그라운드)는 0V 기준점이에요. 전기는 5V에서 나와 부품을 
 
 A0 같은 아날로그 핀도 `digitalWrite`를 쓰면 디지털 출력 핀처럼 쓸 수 있었어요. → [Blink_A0](Blink_A0/Blink_A0.ino)
 
-<br>
-
 ---
 
 ## 3. 디지털 입력
 
 > 메모: 같은 노드의 전압을 읽는다. 5V에 가까운지 0V에 가까운지 판단해서 1, 0
-
-<br>
 
 ### 노드
 
@@ -113,8 +99,6 @@ A0 같은 아날로그 핀도 `digitalWrite`를 쓰면 디지털 출력 핀처�
 ```cpp
 int state = digitalRead(2);  // 2번 핀이 5V 쪽이면 1, 0V 쪽이면 0
 ```
-
-<br>
 
 ---
 
@@ -221,15 +205,11 @@ attachInterrupt(digitalPinToInterrupt(2), buttonISR, FALLING);
 | 인터럽트에서 바꾸는 변수에는 `volatile` 붙이기 | `loop()`에서 바뀐 값을 제대로 읽기 위해서 |
 | 인터럽트 함수 안에서 `Serial`, `delay` 쓰지 않기 | 인터럽트 함수는 짧고 빠르게 끝나야 해요 |
 
-<br>
-
 ---
 
 ## 5. 아날로그 출력 (PWM)
 
 > 메모: PWM으로 펄스폭 변조를 해 아날로그 값을 표현한다
-
-<br>
 
 ### 원리
 
@@ -258,15 +238,11 @@ analogWrite(11, 255)  ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾�
 
 [Blink_Fast](Blink_Fast/Blink_Fast.ino)에서 깜빡이는 간격을 0.1초 → 0.05초 → 0.01초 → 0.005초로 줄여 봤어요. 간격이 짧아질수록 깜빡임이 안 보이더니, 마지막에는 LED가 반쯤 밝게 켜져 있는 것처럼 보였어요. PWM과 같은 원리예요. (`analogWrite`는 이보다 훨씬 빠르게, 1초에 약 490번 켰다 껐다 해요.)
 
-<br>
-
 ---
 
 ## 6. 아날로그 입력
 
 > 메모: 아날로그 입력 A0~A5, 같은 노드의 전압을 읽는다
-
-<br>
 
 ### 0 ~ 1023
 
@@ -293,13 +269,9 @@ float voltage = value * 5.0 / 1023.0;  // 전압(V)으로 바꾸기
 int brightness = map(value, 0, 1023, 0, 255);
 ```
 
-<br>
-
 ---
 
 ## 7. 시리얼 통신
-
-<br>
 
 ### 하는 일
 
@@ -325,13 +297,9 @@ void loop() {
 
 코드에 적은 속도와 시리얼 모니터 속도가 다르면 글자가 깨져서 나와요.
 
-<br>
-
 ---
 
 ## 8. 회로 결선
-
-<br>
 
 ### 기본 규칙
 
@@ -395,13 +363,9 @@ void loop() {
  누름   = 0            누름   = 1
 ```
 
-<br>
-
 ---
 
 ## 9. 네오픽셀
-
-<br>
 
 ### 특징
 
@@ -438,13 +402,9 @@ strip.show();                                     // show()를 해야 실제로 
 - 라이브러리 매니저에서 "Adafruit NeoPixel"을 먼저 설치해야 해요.
 - 밝게 켤수록 전기를 많이 써서, 밝기는 50 정도로 낮춰 쓰는 게 좋아요.
 
-<br>
-
 ---
 
 ## 예제 코드 모음
-
-<br>
 
 ### LED 출력
 
@@ -483,13 +443,9 @@ strip.show();                                     // show()를 해야 실제로 
 | [Button_Interrupt_LED](Button_Interrupt_LED/Button_Interrupt_LED.ino) | 누를 때와 뗄 때마다 LED 토글 | 인터럽트 (`CHANGE`) |
 | [Traffic_Light](Traffic_Light/Traffic_Light.ino) | 버튼을 한 번 누르면 신호등 시작 | 인터럽트 (`FALLING`) |
 
-<br>
-
 ---
 
 ## 보드에 업로드하는 방법
-
-<br>
 
 ### 아두이노 IDE
 
