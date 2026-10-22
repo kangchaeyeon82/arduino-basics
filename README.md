@@ -3,7 +3,7 @@
 아두이노 우노로 LED를 켜고, 버튼을 누르고, 가변저항을 돌리면서 배운 내용을 정리한 노트입니다.
 처음 배우는 사람도 읽을 수 있게 쉬운 말로 설명을 붙였습니다.
 
-![Tinkercad로 만든 회로들](Epic%20Duup.png)
+![Tinkercad로 만든 회로들](tinkercad-circuits.png)
 
 Tinkercad로 만들어 본 회로들
 
